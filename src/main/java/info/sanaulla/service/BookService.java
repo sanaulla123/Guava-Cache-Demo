@@ -70,7 +70,6 @@ public class BookService {
         for(Object authorDataObj : authorDataList){
             Map authorData = (Map)authorDataObj;
             Author author = new Author();
-            author.setId(authorData.get("id").toString());
             author.setName(authorData.get("name").toString());
             book.addAuthor(author);
         }
