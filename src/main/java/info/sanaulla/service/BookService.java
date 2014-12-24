@@ -9,11 +9,6 @@ import info.sanaulla.Constants;
 import info.sanaulla.Util;
 import info.sanaulla.model.Author;
 import info.sanaulla.model.Book;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.util.Arrays;
