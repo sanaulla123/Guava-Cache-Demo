@@ -15,12 +15,12 @@ import java.util.concurrent.ExecutionException;
 public class App 
 {
     public static void main( String[] args ) throws IOException, ExecutionException {
-        Book book = BookService.getBookDetails("9780849303159");
+        Book book = BookService.getBookDetails("9780596009205").get();
         System.out.println(Util.getObjectMapper().writeValueAsString(book));
-        book = BookService.getBookDetails("9780849303159");
-        book = BookService.getBookDetails("9780849303159");
-        book = BookService.getBookDetails("9780849303159");
-        book = BookService.getBookDetails("9780849303159");
+        book = BookService.getBookDetails("9780596009205").get();
+        book = BookService.getBookDetails("9780596009205").get();
+        book = BookService.getBookDetails("9780596009205").get();
+        book = BookService.getBookDetails("9780596009205").get();
         CacheStats cacheStats = BookService.getCacheStats();
         System.out.println(cacheStats.toString());
     }

@@ -1,6 +1,7 @@
 package info.sanaulla.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,9 +11,10 @@ public class Book {
     private String isbn13;
     private List<Author> authors;
     private String publisher;
-
     private String title;
     private String summary;
+    private Integer pageCount;
+    private Date publishedDate;
 
     public String getIsbn13() {
         return isbn13;
@@ -59,5 +61,21 @@ public class Book {
             authors = new ArrayList<Author>();
         }
         authors.add(author);
+    }
+
+    public Integer getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(Integer pageCount) {
+        this.pageCount = pageCount;
+    }
+
+    public Date getPublishedDate() {
+        return publishedDate;
+    }
+
+    public void setPublishedDate(Date publishedDate) {
+        this.publishedDate = publishedDate;
     }
 }
