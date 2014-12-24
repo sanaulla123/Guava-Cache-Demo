@@ -38,6 +38,7 @@ public class BookService {
                     return getBookDetailsFromGoogleBooks(s);
                 }
             });
+
     public static Optional<Book> getBookDetails(String isbn13) throws IOException, ExecutionException {
         Optional<Book> book = cache.get(isbn13);
         return book;
@@ -108,15 +109,8 @@ public class BookService {
         book.setIsbn13(isbn13);
         book.setSummary(getFromJsonResponse(volumeInfo,"description",""));
         book.setPageCount(Integer.parseInt(getFromJsonResponse(volumeInfo, "pageCount", "0")));
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-DD-mm");
-        String publishedDate = getFromJsonResponse(volumeInfo,"publishedDate","");
-        if (!Strings.isNullOrEmpty(publishedDate)){
-            try {
-                book.setPublishedDate(sdf.parse(publishedDate));
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-        }
+        book.setPublishedDate(getFromJsonResponse(volumeInfo,"publishedDate",""));
+
         return Optional.fromNullable(book);
     }
 

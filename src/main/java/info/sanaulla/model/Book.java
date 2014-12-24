@@ -14,7 +14,7 @@ public class Book {
     private String title;
     private String summary;
     private Integer pageCount;
-    private Date publishedDate;
+    private String publishedDate;
 
     public String getIsbn13() {
         return isbn13;
@@ -71,11 +71,11 @@ public class Book {
         this.pageCount = pageCount;
     }
 
-    public Date getPublishedDate() {
+    public String getPublishedDate() {
         return publishedDate;
     }
 
-    public void setPublishedDate(Date publishedDate) {
+    public void setPublishedDate(String publishedDate) {
         this.publishedDate = publishedDate;
     }
 }
